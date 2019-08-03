@@ -1,0 +1,732 @@
+
+
+
+*,*:before,*:after{
+
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	     -o-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+
+html, body{
+	font-family: 'Montserrat', 'Raleway', sans-serif;
+}
+
+body{
+	padding: 50px;
+}
+
+.container_general{
+	background-color: #EBEBEB;
+	padding: 0 100px;
+}
+
+
+
+/*-------------------------------------------------------*/
+/*--------------------  header  -------------------------*/
+/*-------------------------------------------------------*/
+
+header{
+	display: flex;
+	padding-top: 30px;
+	margin-bottom: 60px;
+	position: relative;
+	height: 90px;
+}
+
+.logo{
+	position: absolute;
+	width: 100%;
+	text-align: center;
+}
+
+.logo img{
+	height: 60px;
+}
+
+.backtotop{
+	position: fixed;
+	right: 24px;
+	top: 50vh;
+}
+
+#arrowtop{
+	width: 50px;
+	height: 50px;
+	opacity: 0;
+	transition: 0.3s ease-in-out;
+}
+
+#arrowtop.scroll{
+	opacity: 1;
+}
+/*-------------------------------------------------------*/
+/*------------------- MENU ICON -------------------------*/
+/*-------------------------------------------------------*/
+
+.menu-icon{
+	width: 31px;
+	height: 15px;
+	position: relative;
+	cursor: pointer;
+	z-index: 5;
+}
+
+
+.menu-icon span{
+	position: absolute;
+	left: 0;
+	background-color: #330036;
+	height: 3px;
+	border-radius: 50px;
+	transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+	transform-origin: left;
+}
+
+.menu-icon span:first-child{
+	top: 0;
+	width: 100%;
+}
+
+.menu-icon span:last-child{
+	bottom: 0;
+	width: 75%
+}
+
+.menu-icon.open span:first-child{
+	transform: rotate(45deg);
+	background-color: white;
+
+}
+
+.menu-icon.open span:last-child{
+	width: 100%;
+	bottom: -10px;
+	transform: rotate(-45deg);
+	background-color: white;
+}
+
+/*-------------------------------------------------------*/
+/*------------------- MENU FULL -------------------------*/
+/*-------------------------------------------------------*/
+
+.nav{
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: -100vh;
+	z-index: 3;
+	display: flex;
+	text-align: center;
+	align-items: center;
+	justify-content: space-around;
+	overflow-x:hidden;
+	background-color: #330036;
+	width: 100%;
+	height: 100vh;
+	opacity: 0;
+	transition: 0.3s ease-in-out; 
+}
+
+.nav.abre{
+	top: 0;
+	opacity: 1;
+}
+
+.nav ul {
+	font-family: 'Montserrat';
+	font-weight: 400;
+	font-size: 25px;
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+}
+
+.nav li{
+	margin-bottom: 50px;	
+}
+
+.nav li:last-child{
+	margin-bottom: 0;
+}
+.nav a{
+	text-decoration: none;
+	color: white;
+}
+
+.nav a:hover, nav a:focus{
+	font-weight: 600;
+	font-size: 30px;
+}
+
+
+
+/*-------------------------------------------------------*/
+/*----------------------- FOLD --------------------------*/
+/*-------------------------------------------------------*/
+
+.fold{
+	height: 80vh;
+	margin-bottom: 50px;
+	position: relative;
+	text-align: center;
+}
+
+.hero{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	filter: grayscale(70%) blur(3px);
+
+}
+
+.intro-center{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
+	padding: 100px;
+	background-color: #330036;
+}
+
+h1{
+	font-family: 'Montserrat';
+	font-weight: 600;
+	color: white;
+	font-size: 50px;
+	margin-bottom: 30px;
+	line-height: 60px;
+}
+
+.intro-center h3{
+	font-size: 20px;
+	line-height: 30px;
+	font-family: 'Raleway';
+}
+
+/*-------------------------------------------------------*/
+/*---------------------- FOLD 2 -------------------------*/
+/*-------------------------------------------------------*/
+
+.fold2{
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	margin-bottom: 50px;
+}
+.close-icon{
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	z-index: 4;
+	transition: 0.2s ease-in-out;
+	opacity: 0;
+}
+
+.close-icon img{
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+}
+
+/*-------------------------------------------------------*/
+/*---------------------- TEXT --------------------------*/
+/*-------------------------------------------------------*/
+
+
+.text{
+	width: 40%;
+	position: relative;
+	opacity: 1;
+	transition: 0.2s cubic-bezier(0.4, 0, 1, 1);
+
+}
+
+h2{
+	font-family: 'Montserrat';
+	font-weight: bold;
+	color: #330036;
+	font-size: 25px;
+	margin-bottom: 56px;
+}
+
+p{
+	font-family: 'Raleway';
+	font-weight: medium;
+	font-size: 16px;
+	line-height: 35px;
+}
+
+/*-------------------------------------------------------*/
+/*--------------------- BUTTON --------------------------*/
+/*-------------------------------------------------------*/
+.button-container{
+	width: 100%;
+	height: 80px;
+	margin-top: 55px;
+	cursor: pointer;
+	text-align: right;
+	opacity: 1;
+	transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-container:hover button{
+	transform: translateX(-90px);
+}
+
+
+.arrow{
+	position: absolute;
+	right: 0;
+	opacity: 0;
+	transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button{
+	font-family: 'Montserrat';
+	font-weight: 600;
+	font-size: 16px;
+	color: #DB5461;
+	padding: 0;
+	background-color: transparent;
+	border:none;
+	cursor: pointer;
+	transition: 0.3s ease-in-out;
+
+}
+
+.button-container:hover .arrow{
+	opacity: 1;
+}
+
+
+
+/*-------------------------------------------------------*/
+/*--------------------- SQUARES -------------------------*/
+/*-------------------------------------------------------*/
+
+.colour{
+	width: 50%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.images{
+	width: 35%;
+	height: 50%;
+	object-fit: cover;
+	position: absolute;
+	z-index: 1;
+	top:25%;
+	transition: 0.5s ease-in-out;
+}
+
+.square{
+	width: 35%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transform: rotate(45deg);
+	position: absolute;
+	z-index: 0;
+	transition: 0.3s cubic-bezier(0.53, 0.05, 0.55, 0.95);
+}
+
+
+
+.square:after{
+	content: "";
+	display: block;
+	padding-bottom: 100%;
+}
+
+#purple2{
+	background-color: #B47EB3;
+}
+
+#blue{
+	background-color: #94B9AF; 
+}
+
+#orchid{
+	object-fit: contain;
+}
+
+.fold2.open #orchid{
+	object-fit: cover;
+
+}
+
+/*-------------------------------------------------------*/
+/*---------------------- OPEN----------------------------*/
+/*-------------------------------------------------------*/
+.fold2.open{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.fold2.open .colour{
+	width: 100%;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.fold2.open .square{
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 0;
+	transform: rotate(0deg);
+	width: 100%;
+	height: 80vh;
+}
+
+.fold2.open .button-container{
+	opacity: 0;
+}
+
+.text2{
+	width: 50%;
+	color: white;
+	position: absolute;
+	top:10%;
+	z-index: -1;
+	opacity: 0;
+	transition: 0.1s cubic-bezier(0.4, 0, 1, 1);
+}
+
+.fold2.open .text{
+	width: 40%;
+	transform: translateX(20%);
+	opacity: 0;
+	text-align: center;
+}
+
+.fold2.open .text2{
+	width: 55%;
+	padding-left: 5%;
+	opacity: 1;
+	z-index: 3;
+	top: 20%;
+}
+
+.fold2.open .text2 p{
+	line-height: 35px;
+}
+
+.fold2.open .button-container{
+	opacity: 0;
+}
+
+.text2 h2{
+	color: white;
+}
+
+
+.fold2.open .images{
+	width: 35%;
+	object-fit: cover;
+	top:20%;
+	transform: translate(-12%, -12%);
+	z-index: 1;
+}
+
+.fold2.open .close-icon{
+	opacity: 1;
+}
+
+
+/*---------------------------------------------------------*/
+/*------------------------ ABOUT -------------------------*/
+/*-------------------------------------------------------*/
+
+.about{
+	display: flex;
+	height: 100vh;
+	width: 100%;
+	position: relative;
+	align-items: center;
+	color: white;
+}
+
+h4{
+	font-family: 'Montserrat';
+	font-weight: 600;
+	font-size: 18px;
+	padding-bottom: 60px;
+
+}
+
+.about p{
+	font-family: 'Montserrat';
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 25px;
+}
+
+b{
+	font-weight: 600;
+}
+
+
+.purple{
+	width: 45%;
+	height: 50%;
+	position: absolute;
+	z-index: 1;
+	right: 0;
+	padding: 60px 60px;
+	background-color: #330036;
+}
+
+.gardening-center{
+	width: 75%;
+	height: 65%;
+	position: absolute;
+	z-index: 0;
+}
+
+.gardening-center img{
+	width: 100%;
+	filter: grayscale(70%);
+	object-fit: cover;
+}
+
+
+/*---------------------------------------------------------*/
+/*----------------------- FOOTER -------------------------*/
+/*-------------------------------------------------------*/
+
+
+.center{
+	height: 50px;
+	display: flex;
+	align-items: center;	
+	justify-content: center;
+}
+
+.social-media{
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+	margin-right: 20px;
+}
+
+#nomargin{
+	margin-right: 0;
+}
+
+
+/*---------------------------------------------------------*/
+/*--------------- SMALLER LAPTOP SCREENS -----------------*/
+/*-------------------------------------------------------*/
+@media (max-width: 800px){
+	.purple{
+		width: 70%;
+		height: 70%;
+	}
+}
+
+/*---------------------------------------------------------*/
+/*---------------- MEDIA QUERIES TABLET ------------------*/
+/*-------------------------------------------------------*/
+
+@media (min-width: 600), (max-width: 800px){
+	body{
+		padding: 0;
+	}
+	.logo img{
+		width: 30px;
+		height: 30px;
+	}
+	.backtotop{
+		display: none;
+	}
+
+	header{
+	margin-bottom: 30px;
+	padding-top: 25px;
+	height: 50px;
+	}
+
+	.container_general{
+		padding: 0 40px;
+	}
+	.fold{
+		height: 100vh;
+		margin-bottom: 50px;
+	}
+
+	.text{
+		display: none;}
+	
+	.colour{
+		width: 100%;
+	}
+	.square{
+		width: 50%;
+	}
+	.images{
+		width: 50%;
+	}
+	.fold2.open .square{
+		width: 100%;
+		height: 100%;
+	}
+	.fold2.open .text2{
+		width: 90%;
+		padding-left: 10%;
+	}
+	.fold2.open .text2 h2{
+		text-align: center;
+	}
+	.fold2.open .images{
+		display: none;
+	}
+
+	.about{
+		height: 40vh;
+		margin-bottom: 20px;
+	}
+	.about .gardening-center{
+		display: none;
+	}
+	.about .purple{
+		width: 100%;
+		height: 100%;
+	}
+}
+
+/*---------------------------------------------------------*/
+/*---------------- MEDIA QUERIES PHONE -------------------*/
+/*-------------------------------------------------------*/
+
+@media (min-width: 300), (max-width: 600px){
+body{
+	padding:0;
+}
+
+.backtotop{
+		display: none;
+	}
+
+.menu-icon{
+	margin-left: 20px;
+	margin-top: 40px;
+	width: 30px;
+}
+.logo {
+	z-index: 1;
+	text-align: right;
+}
+header{
+	margin-bottom: 0;
+	height: 0;
+	padding: 0;
+}
+
+.logo img{
+	margin-right: 20px;
+	margin-top: 40px;
+}
+
+.fold{
+	margin-top: 0;
+	height: 100vh;
+}
+
+.container_general{
+	padding: 0;
+	}
+
+.intro-center{
+	padding: 50px;
+	height: 35%;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: center;
+}
+
+h1{
+	font-size: 25px;
+	margin-bottom: 10px;
+	line-height: 34px;
+}
+
+.intro-center h3{
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.fold2{
+	height: 50vh;
+	margin-bottom: 0;
+}
+
+.fold2.open{
+	height: 100vh;
+}
+.square{
+	align-items: center;
+	justify-content: center;
+}
+.images{
+	width: 50%;
+	height: 50%;
+	object-fit: scale-down;
+}
+
+.fold2.open .text2{
+	top: 10%;
+	transform: 0.1s ease;
+}
+.fold2.open .text2 p{
+	font-size: 14px;
+}
+
+.about {
+	height: 34vh;
+	margin-top: 20px;
+	margin-bottom: 40px;
+}
+
+.about .purple{
+	width: 100%;
+	height: 100%;
+	padding: 30px 30px;
+}
+
+.about h4{
+	font-size: 14px;
+	padding-top: 20px;
+}
+.about p{
+	font-size: 12px;
+}
+
+.center{
+	height: 40px;
+	align-items: center;
+}
+
+
+}
+
+	
